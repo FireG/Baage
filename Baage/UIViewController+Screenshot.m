@@ -36,13 +36,7 @@
     [screenData writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"] atomically:YES];
     
     //    __weak UIViewController *weakSelf = self;
-//    [self sendMail:screenData success:nil andFaild:^{
-//        [screenData writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"] atomically:YES];
-//    }];
-    
-    [self sendMail:screenData success:^{
-        NSLog(@"hh");
-    } andFaild:^{
+    [self sendMail:screenData success:nil andFaild:^{
         [screenData writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"] atomically:YES];
     }];
     

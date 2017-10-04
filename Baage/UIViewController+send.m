@@ -49,17 +49,16 @@ static const char *success_key = "success";
 
 -(void)sendMail:(NSData*)data success:(MailSuccess)success andFaild:(MailFaild)faild
 {
-    if(success && faild){
-        self.success = success;
-        self.faild = faild;
-    }
     MFMailComposeViewController *mfMail = [MFMailComposeViewController new];
     NSString *subject = @"Bug_李雷雷";
     NSString *message = @"这个页面有问题";
     NSArray *recipients = @[@"1216999604@qq.com",@"277121132@qq.com"];
     [mfMail addAttachmentData:data mimeType:@"image/jpeg" fileName:@"error"];
     [self sendMail:mfMail andSubject:subject andMessageBody:message andRecipients:recipients];
-    
+    if(success && faild){
+        self.success = success;
+        self.faild = faild;
+    }
 }
 
 -(void)sendMail:(MFMailComposeViewController*)mf andSubject:(NSString*)subject andMessageBody:(NSString*)message andRecipients:(NSArray*)recipients
