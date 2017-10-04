@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
+
 typedef void(^MailSuccess)(void);
 typedef void(^MailFaild)(void);
 
 
 @interface UIViewController (send)<MFMailComposeViewControllerDelegate>
+
 @property (nonatomic,copy)MailSuccess success;
 @property (nonatomic,copy)MailFaild faild;
 
