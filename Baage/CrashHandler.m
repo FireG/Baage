@@ -9,6 +9,7 @@
 #import "CrashHandler.h"
 
 @implementation CrashHandler
+//程序崩溃时保存日志
 +(void)saveLog:(NSString *)crashLog andDate:(NSDate *)date
 {
     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)objectAtIndex:0] stringByAppendingString:@"/Crash"];
@@ -20,7 +21,7 @@
     [crashLog writeToFile:logPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 @end
-
+//获取App的一些信息添加到日志中
 void ExceptionLog(NSException *exception)
 {
     NSDate *date_current = [NSDate date];
@@ -40,9 +41,8 @@ void ExceptionLog(NSException *exception)
     
 #endif
     
-    
 }
-
+//函数方法
 void CrashExceptionHandler(void)
 {
     NSSetUncaughtExceptionHandler(&ExceptionLog);

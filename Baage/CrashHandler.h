@@ -12,5 +12,5 @@
 
 @end
 
-//函数方法
+//函数方法，AppDelegate中调用
 void CrashExceptionHandler(void);

@@ -10,6 +10,7 @@
 #import "UIViewController+send.h"
 @implementation UIViewController (Screenshot)
 
+//摇一摇时候会调用的方法，开始，取消，结束
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     
@@ -25,6 +26,7 @@
     [self screenShot];
 }
 
+//截屏
 -(void)screenShot
 {
     UIWindow *screen = [[UIApplication sharedApplication] keyWindow];
@@ -33,7 +35,6 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsGetCurrentContext();
     NSData *screenData = UIImagePNGRepresentation(image);
-    [screenData writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"] atomically:YES];
     
     //    __weak UIViewController *weakSelf = self;
     [self sendMail:screenData success:nil andFaild:^{
