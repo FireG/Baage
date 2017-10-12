@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB226DD01F8E21EA007EBDE1 /* confuse.sh in Resources */ = {isa = PBXBuildFile; fileRef = FB226DCF1F8E21EA007EBDE1 /* confuse.sh */; };
 		FBFDCC771F84BADC00976820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDCC761F84BADC00976820 /* AppDelegate.m */; };
 		FBFDCC7A1F84BADC00976820 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFDCC791F84BADC00976820 /* ViewController.m */; };
 		FBFDCC7D1F84BADC00976820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBFDCC7B1F84BADC00976820 /* Main.storyboard */; };
@@ -19,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB226DCD1F8E21D6007EBDE1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FB226DCE1F8E21E1007EBDE1 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
+		FB226DCF1F8E21EA007EBDE1 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
+		FB226DD11F8E21F5007EBDE1 /* codeObfuscation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
 		FBFDCC721F84BADC00976820 /* Baage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFDCC751F84BADC00976820 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBFDCC761F84BADC00976820 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +87,10 @@
 				FBFDCC951F84BC0100976820 /* UIViewController+Screenshot.m */,
 				FBFDCC971F84BC5300976820 /* UIViewController+send.h */,
 				FBFDCC981F84BC5300976820 /* UIViewController+send.m */,
+				FB226DCD1F8E21D6007EBDE1 /* PrefixHeader.pch */,
+				FB226DCE1F8E21E1007EBDE1 /* func.list */,
+				FB226DD11F8E21F5007EBDE1 /* codeObfuscation.h */,
+				FB226DCF1F8E21EA007EBDE1 /* confuse.sh */,
 			);
 			path = Baage;
 			sourceTree = "<group>";
@@ -96,6 +105,7 @@
 				FBFDCC6E1F84BADC00976820 /* Sources */,
 				FBFDCC6F1F84BADC00976820 /* Frameworks */,
 				FBFDCC701F84BADC00976820 /* Resources */,
+				FB226DCC1F8E21BF007EBDE1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -146,11 +156,28 @@
 			files = (
 				FBFDCC821F84BADC00976820 /* LaunchScreen.storyboard in Resources */,
 				FBFDCC7F1F84BADC00976820 /* Assets.xcassets in Resources */,
+				FB226DD01F8E21EA007EBDE1 /* confuse.sh in Resources */,
 				FBFDCC7D1F84BADC00976820 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FB226DCC1F8E21BF007EBDE1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PROJECT_DIR/Baage/confuse.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FBFDCC6E1F84BADC00976820 /* Sources */ = {
@@ -299,6 +326,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTBA3VY927;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Baage/PrefixHeader.pch;
 				INFOPLIST_FILE = Baage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzh.Baage;
@@ -314,6 +343,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTBA3VY927;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Baage/PrefixHeader.pch;
 				INFOPLIST_FILE = Baage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzh.Baage;

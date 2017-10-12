@@ -90,6 +90,8 @@ static const char *success_key = "success";
             break;
         case MFMailComposeResultSaved:
             [self alertView:@"保存成功" andDesc:nil];
+        
+            
             break;
         case MFMailComposeResultFailed:
             if (self.faild){
@@ -112,6 +114,8 @@ static const char *success_key = "success";
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:title delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
     [alert show];
 }
+
+
 
 //运行时添加属性 
 -(MailFaild)faild
