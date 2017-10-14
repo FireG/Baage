@@ -15,7 +15,6 @@ APPDelegate中导入头文件#import "CrashHandler.h"
 ```
 
 异常日志扫描并发送邮件
-
 App启动第一个页面导入#import "UIViewController+send.h"
 ```
 - (void)viewDidLoad {
